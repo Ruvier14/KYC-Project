@@ -13,3 +13,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Call on page load
     updateProgress();
 });
+
+function handleLogin(event) {
+    event.preventDefault();
+    
+    // Get form values
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Basic validation
+    if (username && password) {
+        // Redirect to dashboard
+        window.location.href = '/dashboard/dashboard.html';
+    } else {
+        alert('Please fill in all fields');
+    }
+}
+
+// Make sure your login form has this event listener
+document.addEventListener('DOMContentLoaded', function() {
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', handleLogin);
+    }
+});
