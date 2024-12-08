@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Account</title>
+    <link rel="stylesheet" href="createAccount.css">
+    <link rel="stylesheet" href="../shared-styles.css">
+    <script src="createAccount.js" async></script>
+    <script src="createAccountForm.js" async></script>
+    <script src="../shared-script.js" async></script>
+</head>
+<body>  
+
+
+    <div class="container">
+        
+        <div class="progress-container">
+            <div class="progress-steps">
+                <div class="progress" id="progress" style="width: 33%;"></div>
+                
+                <div class="step active">
+                    <div class="step-circle">1</div>
+                    <div class="step-text">Account Setup</div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-circle">2</div>
+                    <div class="step-text">Personal Info</div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-circle">3</div>
+                    <div class="step-text">Review</div>
+                </div>
+            </div>
+        </div>
+        
+
+        <form id="createAccountForm">
+            <h2>Create Your Account</h2>
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" pattern="[0-9]{10}" placeholder="1234567890">
+            </div>
+            <div class="form-group">
+                <label for="password">Create Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" required>
+            </div>
+            <a href="/kyc-info/kycInfo.html" class="btn" id="nextButton">Next</a>
+
+            
+        </form>
+        <div class="return-login">
+            <a href="/">Already have an account? Login here</a>
+        </div>
+    </div>
+
+    
+</body>
+</html>

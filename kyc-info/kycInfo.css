@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 500px;
+    width: 90%;
+    margin: 20px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.personal-info {
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.return-login {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.return-login a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.return-login a:hover {
+    text-decoration: underline;
+}
+
+/* Specific styling for SSN field */
+#ssn {
+    letter-spacing: 0.3em;
+}
+
+.form-group {
+    position: relative;
+}
+
+#ssn {
+    font-family: monospace;
+    letter-spacing: 0.1em;
+}
+
+.input-hint {
+    display: block;
+    color: #666;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Style for the masked input */
+#ssn[data-masked-value] {
+    font-family: monospace;
+    letter-spacing: 0.2em;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+    .container {
+        margin: 10px;
+        padding: 20px;
+    }
+    
+    .form-group input {
+        padding: 10px;
+    }
+}
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Information</title>
+    <link rel="stylesheet" href="review.css">
+    <link rel="stylesheet" href="../shared-styles.css">
+    <script src="review.js" async></script>
+</head>
+<body>
+    <div class="container">
+        <div class="progress-container">
+            <div class="progress-steps">
+                <div class="progress" id="progress" style="width: 100%;"></div>
+                
+                <div class="step completed">
+                    <div class="step-circle">1</div>
+                    <div class="step-text">Account Setup</div>
+                </div>
+                
+                <div class="step completed">
+                    <div class="step-circle">2</div>
+                    <div class="step-text">Personal Info</div>
+                </div>
+                
+                <div class="step active">
+                    <div class="step-circle">3</div>
+                    <div class="step-text">Review</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-section">
+            <h2>Review Your Information</h2>
+            
+            <div class="review-group">
+                <h3>Account Information</h3>
+                <div class="review-item">
+                    <label>Email:</label>
+                    <span id="reviewEmail"></span>
+                </div>
+                <div class="review-item">
+                    <label>Phone:</label>
+                    <span id="reviewPhone"></span>
+                </div>
+            </div>
+
+            <div class="review-group">
+                <h3>Personal Information</h3>
+                <div class="review-item">
+                    <label>Full Name:</label>
+                    <span id="reviewName"></span>
+                </div>
+                <div class="review-item">
+                    <label>Date of Birth:</label>
+                    <span id="reviewDOB"></span>
+                </div>
+                <div class="review-item">
+                    <label>SSN:</label>
+                    <span id="reviewSSN">XXX-XX-****</span>
+                </div>
+            </div>
+
+            <div class="review-group">
+                <h3>Address Information</h3>
+                <div class="review-item">
+                    <label>Street Address:</label>
+                    <span id="reviewAddress"></span>
+                </div>
+                <div class="review-item">
+                    <label>City:</label>
+                    <span id="reviewCity"></span>
+                </div>
+                <div class="review-item">
+                    <label>State:</label>
+                    <span id="reviewState"></span>
+                </div>
+                <div class="review-item">
+                    <label>Zip Code:</label>
+                    <span id="reviewZip"></span>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn secondary" onclick="window.history.back()">Edit Information</button>
+                <button href="/firstPage.html" class="btn primary" onclick="submitApplication()">Submit Application</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="review.js"></script>
+</body>
+</html>

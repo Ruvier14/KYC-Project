@@ -1,0 +1,115 @@
+.progress-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    padding: 20px 0;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 0 40px;
+}
+
+/* Line between steps */
+.progress-steps::before {
+    content: "";
+    background-color: #ddd;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Progress line */
+.progress {
+    background-color: #4CAF50;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 0%;
+    z-index: 1;
+    transition: 0.4s ease;
+}
+
+.step {
+    background-color: white;
+    position: relative;
+    z-index: 2;
+    width: 40px;
+    text-align: center;
+}
+
+.step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+.step.active .step-circle {
+    border-color: #4CAF50;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.step.completed .step-circle {
+    border-color: #4CAF50;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.step-text {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #666;
+    white-space: nowrap;
+    width: max-content;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .progress-container {
+        width: 95%;
+        padding: 10px 0;
+    }
+
+    .progress-steps {
+        margin: 0 20px;
+    }
+
+    .step-circle {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .step-text {
+        font-size: 12px;
+        top: 45px;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 400px) {
+    .step-text {
+        font-size: 11px;
+        top: 40px;
+    }
+}
