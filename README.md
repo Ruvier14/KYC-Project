@@ -62,28 +62,67 @@ http://localhost:3000
 
 KYC-Project/
 ├── apiCall.js
+
+│
+
 ├── dashboard/
-│ ├── dashboard.css
-│ ├── dashboard.html
-│ └── dashboard.js
+
+│   ├── dashboard.css
+
+│   ├── dashboard.html
+
+│   └── dashboard.js
+
+│
+
 ├── kyc-info/
-│ ├── kycInfo.css
-│ ├── kycInfo.html
-│ └── kycInfo.js
+
+│   ├── kycInfo.css
+
+│   ├── kycInfo.html
+
+│   └── kycInfo.js
+
+│
+
 ├── review/
-│ ├── review.css
-│ ├── review.html
-│ └── review.js
+
+│   ├── review.css
+
+│   ├── review.html
+
+│   └── review.js
+
+│
+
 ├── signUp/
-│ ├── createAccount.css
-│ ├── createAccount.html
-│ ├── createAccount.js
-│ └── createAccountForm.js
+
+│   ├── createAccount.css
+
+│   ├── createAccount.html
+
+│   ├── createAccount.js
+
+│   └── createAccountForm.js
+
+│
+
 ├── successPage/
-│ ├── successPage.css
-│ └── successPage.html
+
+│   ├── successPage.css
+
+│   └── successPage.html
+
+│
+
 ├── shared-script.js
+
+│
+
 ├── shared-styles.css
+
+│
+
 └── server.js
 
 ## Requirements
