@@ -41,3 +41,26 @@ function handleLogin(event) {
 
 // Add event listener to the form
 document.getElementById('loginForm').addEventListener('submit', handleLogin);
+
+// Function to get URL parameters
+function getUrlParams() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+        email: params.get('email'),
+        phone: params.get('phone'),
+        fullName: params.get('fullName')
+    };
+}
+
+// Function to display user information
+function displayUserInfo() {
+    const userInfo = getUrlParams();
+    
+    // Update the elements with user information
+    document.getElementById('reviewEmail').textContent = userInfo.email || 'Not provided';
+    document.getElementById('reviewPhone').textContent = userInfo.phone || 'Not provided';
+    document.getElementById('reviewFullName').textContent = userInfo.fullName || 'Not provided';
+}
+
+// Call displayUserInfo when the page loads
+window.onload = displayUserInfo;

@@ -139,38 +139,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // update review page with user data
 
-document.getElementById('kycForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+function handleSubmit(event) {
+    event.preventDefault();
     
     // Get form values
-    const formData = {
-        dob: document.getElementById('dob').value,
-        ssn: document.getElementById('ssn').value,
-        address: document.getElementById('address').value,
-        city: document.getElementById('city').value,
-        state: document.getElementById('state').value,
-        zipCode: document.getElementById('zipCode').value
-    };
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const fullName = document.getElementById('fullName').value;
+    
+    // Create URL with parameters
+    const reviewUrl = `/review/review.html?email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}&fullName=${encodeURIComponent(fullName)}`;
+    
+    // Navigate to review page
+    window.location.href = reviewUrl;
+}
 
-    // Validate required fields
-    let isValid = true;
-    Object.entries(formData).forEach(([key, value]) => {
-        if (!value) {
-            isValid = false;
-            document.getElementById(key).style.borderColor = 'red';
-        } else {
-            document.getElementById(key).style.borderColor = '#ddd';
-        }
-    });
-
-    if (!isValid) {
-        alert('Please fill in all required fields.');
-        return;
-    }
-
-    // Store in localStorage
-    localStorage.setItem('kycData', JSON.stringify(formData));
-
-    // Redirect to review page
-    window.location.href = '/review/review.html';
-});
+// Add event listener to the form
+document.getElementById('kycForm').addEventListener('submit', handleSubmit);
