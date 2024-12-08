@@ -23,30 +23,21 @@ function submitApplication() {
     window.location.href = '../dashboard/dashboard.html';
 }
 
-async function handleLogin(event) {
+function handleLogin(event) {
     event.preventDefault();
     
+    // Get form values
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    try {
-        const response = await fetch('/api/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ username, password })
-        });
-
-        if (response.ok) {
-            // Successful login - redirect to dashboard
-            window.location.href = '/dashboard';
-        } else {
-            // Handle login error
-            alert('Login failed. Please check your credentials.');
-        }
-    } catch (error) {
-        console.error('Login error:', error);
-        alert('An error occurred during login.');
+    // Basic validation
+    if (username && password) {
+        // Direct navigation to dashboard
+        window.location.href = '/dashboard/dashboard.html';
+    } else {
+        alert('Please fill in all fields');
     }
 }
+
+// Add event listener to the form
+document.getElementById('loginForm').addEventListener('submit', handleLogin);
