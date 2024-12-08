@@ -52,7 +52,6 @@ document.getElementById('createAccountForm').addEventListener('submit', async fu
         alert('Error submitting form');
     }
 });
-
 async function checkKYCStatus(accountId) {
     try {
         const response = await fetch(`/api/kyc/status/${accountId}`);
@@ -78,3 +77,24 @@ async function checkKYCStatus(accountId) {
         console.error('Error checking KYC status:', error);
     }
 }
+
+nextButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+
+    console.log('Storing values:', { firstName, lastName, email, phone }); // Debug log
+
+    // Store in localStorage
+    localStorage.setItem('firstName', firstName);
+    localStorage.setItem('lastName', lastName);
+    localStorage.setItem('email', email);
+    localStorage.setItem('phone', phone);
+
+    // Proceed to next page
+    window.location.href = '../kyc-info/kycInfo.html';
+});

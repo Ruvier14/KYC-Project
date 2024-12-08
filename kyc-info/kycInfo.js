@@ -144,11 +144,14 @@ function handleSubmit(event) {
     
     // Get form values
     const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
+    const phoneNumber = document.getElementById('phoneNumber').value;
     const fullName = document.getElementById('fullName').value;
     
     // Create URL with parameters
-    const reviewUrl = `/review/review.html?email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}&fullName=${encodeURIComponent(fullName)}`;
+    const reviewUrl = `/review/review.html?` + 
+        `email=${encodeURIComponent(email)}&` +
+        `phoneNumber=${encodeURIComponent(phoneNumber)}&` +
+        `fullName=${encodeURIComponent(fullName)}`;
     
     // Navigate to review page
     window.location.href = reviewUrl;
@@ -156,3 +159,22 @@ function handleSubmit(event) {
 
 // Add event listener to the form
 document.getElementById('kycForm').addEventListener('submit', handleSubmit);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const nextButton = document.querySelector('.btn');
+
+    nextButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Store KYC information
+        localStorage.setItem('dob', document.getElementById('dob').value);
+        localStorage.setItem('ssn', document.getElementById('ssn').value);
+        localStorage.setItem('address', document.getElementById('address').value);
+        localStorage.setItem('city', document.getElementById('city').value);
+        localStorage.setItem('state', document.getElementById('state').value);
+        localStorage.setItem('zip', document.getElementById('zip').value);
+
+        // Proceed to review page
+        window.location.href = '/review/review.html';
+    });
+});

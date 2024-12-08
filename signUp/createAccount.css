@@ -59,11 +59,7 @@ h2 {
     box-sizing: border-box; 
 }
 
-a.btn {
-    margin: 20px auto;  /* Centers the button if it's an anchor tag */
-    text-decoration: none;
-    color: white;
-}
+
 
 .btn:hover {
     background-color: #45a049;
@@ -83,4 +79,82 @@ a.btn {
 
 .return-login a:hover {
     text-decoration: underline;
+}
+
+.animated-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.1;
+    filter: blur(5px);
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+    animation: floatAnimation 15s infinite linear;
+}
+
+.square {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(45deg, #e74c3c, #f1c40f);
+    animation: rotateAnimation 20s infinite linear;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 170px solid rgba(155, 89, 182, 0.5);
+    animation: floatAnimation 18s infinite linear reverse;
+}
+
+/* Position the shapes */
+.shape:nth-child(1) { top: 10%; left: 10%; }
+.shape:nth-child(2) { top: 60%; left: 80%; }
+.shape:nth-child(3) { top: 80%; left: 15%; }
+.shape:nth-child(4) { top: 30%; left: 60%; }
+.shape:nth-child(5) { top: 70%; left: 40%; }
+
+@keyframes floatAnimation {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(100px, 100px) rotate(180deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Ensure the container stays above the background */
+.container {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.95); /* Add slight transparency */
+    backdrop-filter: blur(5px); /* Add subtle blur effect */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
