@@ -4,12 +4,48 @@
         {
             "src": "server.js",
             "use": "@vercel/node"
+        },
+        {
+            "src": "*.html",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "**/*.{css,js,jpg,jpeg,png,gif}",
+            "use": "@vercel/static"
         }
     ],
     "routes": [
         {
-            "src": "/(.)",
+            "src": "/api/(.*)",
             "dest": "server.js"
+        },
+        {
+            "src": "/",
+            "dest": "firstPage.html"
+        },
+        {
+            "src": "/dashboard",
+            "dest": "dashboard/dashboard.html"
+        },
+        {
+            "src": "/kyc-info",
+            "dest": "kyc-info/kycInfo.html"
+        },
+        {
+            "src": "/review",
+            "dest": "review/review.html"
+        },
+        {
+            "src": "/signup",
+            "dest": "signUp/createAccount.html"
+        },
+        {
+            "src": "/success",
+            "dest": "successPage/successPage.html"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/$1"
         }
     ]
 }
